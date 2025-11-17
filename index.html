@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triptastic Nursing & Employment Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+          --bg: #ffffff;
+          --text: #1e293b;
+          --text-muted: #475569;
+          --light-green: #86efac;
+          --navy: #0f172a;
+          --navy-light: #1e293b;
+          --green-accent: #22c55e;
+          --accent-blue: #22c55e; /* matches your green theme */
+          --border: #e2e8f0;
+          --shadow: 0 4px 6px rgba(0,0,0,0.1);
+          --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+          --font-heading: 'Playfair Display', serif;
+          --font-body: 'Poppins', sans-serif;
+        }
+        * { box-sizing: border-box; margin:0; padding:0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--text); background: var(--bg); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Top Bar */
+        .top-bar { background: var(--navy); color: #fff; padding: 12px 0; font-size: 15px; }
+        .top-bar-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .top-bar-links a { color: #fff; text-decoration: none; margin-left: 25px; opacity: 0.9; }
+        .top-bar-links a:hover { opacity: 1; }
+
+        /* Header */
+        .site-header { position: sticky; top: 0; z-index: 1000; background: var(--bg); box-shadow: var(--shadow); }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+        .brand { font-family: var(--font-heading); font-size: 2rem; color: var(--navy); text-decoration: none; }
+        .brand span { color: var(--light-green); }
+        .nav-main { display: flex; gap: 35px; list-style: none; }
+        .nav-main a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-main a:hover { color: var(--navy); }
+        .cta { background: var(--light-green); color: var(--navy); padding: 12px 30px; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+        .cta:hover { background: var(--green-accent); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+        /* Hero */
+        .hero { background: linear-gradient(rgba(15,23,42,0.88), rgba(15,23,42,0.88)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2970') center/cover no-repeat; color: #fff; text-align: center; padding: 180px 20px; }
+        .hero h1 { font-family: var(--font-heading); font-size: 4rem; margin-bottom: 20px; }
+        .hero .lead { font-size: 1.4rem; max-width: 900px; margin: 0 auto 40px; }
+
+        /* General Section */
+        .section { padding: 100px 0; text-align: center; }
+        .section h2 { font-family: var(--font-heading); font-size: 3rem; color: var(--navy); margin-bottom: 20px; }
+        .subhead { font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 50px; }
+
+        /* EXACT EL JESTIC SLIDER – NOW WITH 6 IMAGES */
+        .slider-section {
+          padding: 80px 20px;
+          text-align: center;
+          background: var(--bg);
+          width: 100%;
+          max-width: none;
+          margin: 0;
+        }
+
+        .slider-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 30px;
+          overflow: hidden;
+        }
+
+        .slider {
+          grid-column: 1 / -1;
+          display: flex;
+          width: 600%;                         /* 6 images */
+          animation: slide 30s infinite;       /* smooth 30-second loop */
+        }
+
+        .slider img {
+          width: 16.666666%;                  /* 100% / 6 */
+          height: 700px;
+          object-fit: cover;
+          display: block;
+          border: 2px solid var(--accent-blue);
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: var(--shadow);
+        }
+
+        @keyframes slide {
+          0%   { transform: translateX(0); }
+          16%  { transform: translateX(0); }
+          20%  { transform: translateX(-16.666%); }
+          36%  { transform: translateX(-16.666%); }
+          40%  { transform: translateX(-33.333%); }
+          56%  { transform: translateX(-33.333%); }
+          60%  { transform: translateX(-50%); }
+          76%  { transform: translateX(-50%); }
+          80%  { transform: translateX(-66.666%); }
+          96%  { transform: translateX(-66.666%); }
+          100% { transform: translateX(-83.333%); }
+        }
+
+        /* Services, About, etc. */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; }
+        .service-card { background: #fff; border: 2px solid var(--light-green); border-radius: 16px; padding: 35px; box-shadow: var(--shadow); transition: all 0.3s; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: var(--navy); }
+        .service-card h3 { font-family: var(--font-heading); font-size: 1.7rem; color: var(--navy); margin: 15px 0; }
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: left; }
+        .value-item { background: #f8fdfa; padding: 25px; border-radius: 12px; border-left: 5px solid var(--light-green); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .testimonial-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 30px; box-shadow: var(--shadow); font-style: italic; }
+        .testimonial-author { margin-top: 20px; font-weight: 600; color: var(--navy); font-style: normal; }
+        .jobs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .job-card { background: #fff; border: 2px solid var(--light-green); border-radius: 12px; padding: 25px; text-align: left; }
+        .cta-section { background: var(--navy); color: #fff; padding: 120px 20px; text-align: center; }
+        .site-footer { background: var(--navy-light); color: #cbd5e1; padding: 80px 0 30px; }
+        .footer-inner { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-section h4 { color: var(--light-green); margin-bottom: 20px; }
+
+        @media (max-width: 768px) {
+          .hero h1 { font-size: 3rem; }
+          .slider img { height: 380px; }
+          .nav-main { position: fixed; top: 0; left: -100%; width: 80%; height: 100vh; background: var(--bg); flex-direction: column; padding-top: 120px; transition: 0.3s; box-shadow: var(--shadow-lg); gap: 25px; }
+          .nav-main.open { left: 0; }
+          .nav-toggle { display: block; cursor: pointer; }
+          .nav-toggle span { display: block; width: 28px; height: 3px; background: var(--navy); margin: 6px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div>Contact us: +1 (246) XXX-XXXX | info@triptastic.com</div>
+            <div class="top-bar-links">
+                <a href="#services">Services</a>
+                <a href="#jobs">Careers</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="brand">Triptastic<span>.</span></a>
+            <nav class="nav-main" id="primary-menu">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#services">Services</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#jobs">Careers</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="tel:+1246XXXXXXX" class="cta">Call Now</a>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Exceptional Care. Reliable Staffing.<br>Triptastic Nursing & Employment Agency</h1>
+            <p class="lead">Connecting compassionate, skilled healthcare professionals and job seekers with rewarding opportunities since 2022.</p>
+            <div style="margin-top: 40px;">
+                <a href="#gallery" style="background:var(--light-green); color:var(--navy); padding:15px 35px; border-radius:50px; font-weight:600; text-decoration:none; margin:0 10px;">See Our Work</a>
+                <a href="#jobs" style="background:#fff; color:var(--navy); padding:15px 35px; border-radius:50px; font-weight:600; text-decoration:none; margin:0 10px;">View Jobs</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="container">
+            <h2>About Triptastic</h2>
+            <p class="subhead">Established in 2022, Triptastic Nursing and Employment Agency is a trusted provider of professional staffing solutions and healthcare services in Barbados and beyond.</p>
+            <p style="max-width:900px; margin:30px auto; font-size:1.1rem;">We connect qualified nurses, caregivers, and skilled professionals with hospitals, clinics, nursing homes, private clients, and businesses across various sectors. Our focus on excellence, compassion, and personalized support ensures the right people are matched with the right opportunities every time.</p>
+
+            <h2 style="margin-top:80px;">Our Mission</h2>
+            <p class="subhead">To provide exceptional staffing and healthcare solutions that promote quality care, professional growth, and community well-being. We connect compassionate, skilled professionals with reputable employers, ensuring reliable service delivery and lasting partnerships built on trust, integrity, and excellence.</p>
+
+            <h2 style="margin-top:80px;">Core Values</h2>
+            <div class="about-grid">
+                <div class="value-item"><strong>Compassion</strong><br>We care for people with empathy and respect.</div>
+                <div class="value-item"><strong>Integrity</strong><br>Honesty and ethical practices in everything we do.</div>
+                <div class="value-item"><strong>Excellence</strong><br>Striving for the highest standards in service and performance.</div>
+                <div class="value-item"><strong>Reliability</strong><br>Consistent, dependable staffing solutions.</div>
+                <div class="value-item"><strong>Empowerment</strong><br>Supporting growth through training and career advancement.</div>
+                <div class="value-item"><strong>Teamwork</strong><br>Collaboration for the best outcomes.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXACT EL JESTIC SLIDER WITH YOUR 6 IMAGES -->
+    <section class="slider-section" id="gallery">
+        <div class="container">
+            <h2>Our Team in Action</h2>
+            <p class="subhead">Real moments of care, compassion, and professionalism</p>
+
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="triptastic2.jpeg" alt="Triptastic Care 2">
+                    <img src="triptastic3.jpeg" alt="Triptastic Care 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light" id="services" style="background:#f8fdfa;">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p class="subhead">Comprehensive staffing and care solutions tailored to your needs</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Nursing & Healthcare Staffing</h3>
+                    <p>Registered Nurses (RNs), Licensed Practical Nurses, Nursing Assistants, Home Health Aides, and Personal Support Workers for hospitals, clinics, nursing homes, and private care.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Private Home Care Services</h3>
+                    <p>Compassionate in-home care including companionship, personal assistance, medication reminders, meal preparation, and specialized dementia/Alzheimer’s support.</p>
+                </div>
+                <div class="service-card">
+                    <h3>General Employment Services</h3>
+                    <p>Placement in administrative, hospitality, housekeeping, maintenance, and other support roles across industries.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Recruitment & Placement</h3>
+                    <p>Job matching, screening, background checks, temporary/contract/permanent placements.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Training & Development</h3>
+                    <p>Workshops and professional development to enhance skills and career readiness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="testimonials">
+        <div class="container">
+            <h2>What People Say</h2>
+            <p class="subhead">Real experiences from our valued staff and clients</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>“Working with Trip Tastic has been one of the best experiences of my career... They make you feel like family.”</p>
+                    <div class="testimonial-author">— Anniesha Watson, Nursing Assistant</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>“Trip Tastic is more than just an agency, it’s a team that truly values people.”</p>
+                    <div class="testimonial-author">— Diamond Prendergast, Caregiver</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>“The staff are always punctual, respectful, and well-trained... Trip Tastic has exceeded my expectations in every way.”</p>
+                    <div class="testimonial-author">— George Sealy, Client</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>“They’ve made a real difference in my aunt’s quality of life and given me peace of mind.”</p>
+                    <div class="testimonial-author">— Juliet Fenty (for Joyce Fenty), Client</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light" id="jobs" style="background:#f8fdfa;">
+        <div class="container">
+            <h2>Current Opportunities</h2>
+            <p class="subhead">Join the Triptastic team – where care meets opportunity!</p>
+            <div class="jobs-grid">
+                <div class="job-card">
+                    <h3>Registered Nurse (RN)</h3>
+                    <p><strong>Location:</strong> Various hospitals & facilities<br><strong>Type:</strong> Full-time / Part-time / Contract<br><strong>Requirements:</strong> Valid license + 1 year experience</p>
+                </div>
+                <div class="job-card">
+                    <h3>Auxiliary Nurse</h3>
+                    <p><strong>Location:</strong> Clinics, nursing homes, home care<br><strong>Type:</strong> Flexible</p>
+                </div>
+                <div class="job-card">
+                    <h3>Nursing Assistant</h3>
+                    <p><strong>Location:</strong> Private homes & long-term care<br><strong>Type:</strong> Full-time / Part-time / Shifts</p>
+                </div>
+                <div class="job-card">
+                    <h3>Home Health Aide / Caregiver</h3>
+                    <p><strong>Location:</strong> Client residences<br><strong>Type:</strong> Flexible hours</p>
+                </div>
+            </div>
+            <p style="margin-top:40px;"><a href="mailto:info@triptastic.com" class="cta" style="display:inline-block;">Apply Today</a></p>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p style="font-size:1.4rem; max-width:800px; margin:30px auto;">Whether you're looking for exceptional care or your next career opportunity, we're here to help.</p>
+            <a href="tel:+1246XXXXXXX" style="background:var(--light-green); color:var(--navy); padding:18px 45px; border-radius:50px; font-size:1.2rem; text-decoration:none;">Call Us Now</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-section">
+                <h4>Triptastic Nursing & Employment Agency</h4>
+                <p>Excellence in healthcare staffing and compassionate home care since 2022.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul style="list-style:none;">
+                    <li><a href="#about" style="color:#cbd5e1; text-decoration:none;">About Us</a></li>
+                    <li><a href="#gallery" style="color:#cbd5e1; text-decoration:none;">Gallery</a></li>
+                    <li><a href="#services" style="color:#cbd5e1; text-decoration:none;">Services</a></li>
+                    <li><a href="#jobs" style="color:#cbd5e1; text-decoration:none;">Careers</a></li>
+                    <li><a href="#contact" style="color:#cbd5e1; text-decoration:none;">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Barbados<br>Phone: +1 (246) XXX-XXXX<br>Email: info@triptastic.com</p>
+            </div>
+        </div>
+        <div style="text-align:center; padding-top:30px; color:#94a3b8; font-size:0.9rem;">
+            © 2025 Triptastic Nursing & Employment Agency. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+            document.getElementById('primary-menu').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
