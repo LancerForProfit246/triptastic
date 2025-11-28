@@ -4,226 +4,237 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trip Tastic Nursing & Employment Agency – Trusted Healthcare Staffing in Barbados</title>
-  <meta name="description"
-    content="Leading nursing and employment agency in Barbados providing professional healthcare staffing, home care, private nursing, and general recruitment services." />
-
-  <!-- Google Font -->
+  <meta name="description" content="Leading nursing and employment agency in Barbados providing professional healthcare staffing, home care, private nursing, and general recruitment services." />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
-
   <style>
     :root {
-      --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
-      --green: #00c927;
-      --blue: #0a1c81;
-      --dark: #002737;
-      --gold: #FFD700;
+      --green:#00c927;
+      --blue:#0a1c81;
+      --dark:#002737;
+      --gold:#FFD700;
     }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,sans-serif;line-height:1.6;color:var(--dark);background:#fff;}
+    img,video{max-width:100%;display:block;}
+    a{text-decoration:none;color:inherit;}
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Inter, var(--default-font-family); line-height: 1.6; color: var(--dark); background: #fff; }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
-
-    /* HEADER */
-    header { width: 100%; background: #fff; box-shadow: 0 5px 10px rgba(0,0,0,0.05); padding: 20px 0; position: sticky; top: 0; z-index: 100; }
-    .header-inner { max-width: 1440px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
-    .logo { width: 140px; }
-    .top-contact { font-size: 13.6px; white-space: nowrap; }
-    .nav-menu { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
-    .nav-menu a { color: var(--dark); font-size: 15px; font-weight: 500; }
-    .nav-menu a:hover { color: var(--blue); }
-    .contact-btn { background: var(--gold); color: #fff; padding: 12px 30px; border-radius: 4px; font-weight: 500; transition: background 0.3s; }
-    .contact-btn:hover { background: #00af20; }
-
-    /* HERO */
-    .hero { position: relative; max-width: 1440px; margin: 0 auto; padding: 80px 20px 160px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
-    .hero-text { max-width: 650px; }
-    .hero-text .tag { color: var(--blue); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-    .hero-text h1 { font-size: 38px; margin: 15px 0 20px; line-height: 1.2; }
-    .hero-text p { font-size: 16px; margin-bottom: 20px; }
-    .btn-primary { background: var(--gold); color: black; padding: 14px 34px; border-radius: 4px; font-weight: 500; display: inline-block; }
-    .hero-img { flex: 1; min-width: 300px; }
-
-    /* TESTIMONIAL SLIDER */
-    .testimonial-slider {
-      position: absolute; bottom: -100px; left: 50%; transform: translateX(-50%);
-      background: #fff; padding: 35px; width: 90%; max-width: 460px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15); border-radius: 12px; text-align: center;
-      z-index: 10;
+    header{
+      width:100%;
+      background:#fff;
+      box-shadow:0 5px 10px rgba(0,0,0,0.05);
+      padding:20px 0;
+      position:sticky;
+      top:0;
+      z-index:1000;
     }
-    .slides { display: none; opacity: 0; transition: opacity 0.8s ease; }
-    .slides.active { display: block; opacity: 1; }
-    .slides p { font-style: italic; margin-bottom: 15px; font-size: 15.5px; }
-    .slides strong { color: var(--blue); font-weight: 600; }
-    .prev, .next { cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%);
-      color: #999; font-size: 24px; font-weight: bold; user-select: none; }
-    .prev { left: 15px; }
-    .next { right: 15px; }
-    .prev:hover, .next:hover { color: var(--green); }
-    .dots { margin-top: 20px; text-align: center; }
-    .dot { height: 10px; width: 10px; margin: 0 6px; background: #ddd; border-radius: 50%; display: inline-block; cursor: pointer; transition: background 0.3s; }
-    .dot.active, .dot:hover { background: var(--green); }
+    .header-inner{
+      max-width:1440px;
+      margin:0 auto;
+      padding:0 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:15px;
+      position:relative;
+    }
+    .logo{width:140px;}
+    .top-contact{font-size:13.6px;white-space:nowrap;}
 
-    /* MISSION & VALUES */
-    .mission-values { padding: 160px 20px 100px; background: #f9f9f9; text-align: center; }
-    .mission-values h2 { font-size: 36px; margin-bottom: 20px; color: var(--blue); }
-    .mission-statement { max-width: 900px; margin: 0 auto 60px; font-size: 18px; line-height: 1.8; color: #333; }
-    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-    .value-card { background: #fff; padding: 35px 25px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: transform 0.3s; }
-    .value-card:hover { transform: translateY(-8px); }
-    .value-card h3 { color: var(--blue); margin-bottom: 15px; font-size: 22px; }
+    .nav-menu{
+      display:flex;
+      gap:40px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .nav-menu a{color:var(--dark);font-size:15px;font-weight:500;}
+    .nav-menu a:hover{color:var(--blue);}
+    .contact-btn{
+      background:var(--gold);
+      color:#fff;
+      padding:12px 30px;
+      border-radius:4px;
+      font-weight:500;
+      transition:background .3s;
+    }
+    .contact-btn:hover{background:#00af20;}
 
-    /* ABOUT */
-    .about { padding: 100px 20px; max-width: 1440px; margin: 0 auto; text-align: center; background: #fff; }
-    .about h2 { font-size: 36px; margin-bottom: 30px; color: var(--blue); }
-    .about p { max-width: 900px; margin: 0 auto 20px; font-size: 16.5px; line-height: 1.8; }
+    .hamburger{
+      display:none;
+      background:none;
+      border:none;
+      width:36px;
+      height:36px;
+      cursor:pointer;
+      flex-direction:column;
+      justify-content:center;
+      gap:6px;
+      z-index:1100;
+    }
+    .hamburger span{
+      display:block;
+      width:30px;
+      height:3px;
+      background:var(--blue);
+      border-radius:3px;
+      transition:all .3s ease;
+    }
+    .hamburger.active span:nth-child(1){transform:translateY(9px) rotate(45deg);}
+    .hamburger.active span:nth-child(2){opacity:0;}
+    .hamburger.active span:nth-child(3){transform:translateY(-9px) rotate(-45deg);}
 
-    /* SERVICES */
-    .services { padding: 100px 20px; max-width: 1440px; margin: 0 auto; text-align: center; }
-    .services h2 { font-size: 44px; margin-bottom: 20px; color: var(--blue); }
-    .services > p { font-size: 20px; margin-bottom: 60px; color: #555; }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
-    .service-card { background: #f9f9f9; padding: 40px 25px; border-radius: 12px; text-align: center; transition: transform 0.3s; }
-    .service-card:hover { transform: translateY(-10px); }
-    .service-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: contain;
-      object-position: center;
-      border-radius: 8px;
-      background: #f8f9fa;
-      margin-bottom: 20px;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-    .service-card h3 { font-size: 24px; margin: 15px 0; color: var(--blue); }
-    .service-card p { font-size: 14.5px; margin-bottom: 20px; color: #444; }
-    .service-card a { color: var(--green); font-weight: 700; font-size: 14px; }
-
-    /* STATS */
-    .stats {
-      background: var(--gold);
-      color: #000;
-      padding: 100px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .stat-number {
-      font-size: 68px;
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 12px;
-      color: #000;
-    }
-    .stat-number span { font-size: 82px; }
-    .stat-label {
-      font-size: 18px;
-      font-weight: 600;
-      color: #000;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    /* FOOTER */
-    footer { background: #e2e6f2; padding: 100px 20px 40px; color: var(--dark); }
-    .footer-inner { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 50px; }
-    .footer-logo { width: 130px; margin-bottom: 20px; }
-    .footer-contact h4 { font-size: 18px; margin-bottom: 25px; color: var(--blue); }
-    .footer-contact p { font-size: 14px; margin: 8px 0; }
-    .privacy-link { color: var(--blue); text-decoration: underline; }
-    .copyright { margin-top: 50px; text-align: center; font-size: 14px; color: #555; }
-
-    /* ————————————————————————
-       NEW: HAMBURGER MENU (only added styles)
-       ———————————————————————— */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-      padding: 8px;
-    }
-    .hamburger span {
-      width: 28px;
-      height: 3px;
-      background: var(--blue);
-      border-radius: 3px;
-      transition: all 0.3s ease;
-    }
-    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
-    .hamburger.active span:nth-child(2) { opacity: 0; }
-    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
-
-    /* Show hamburger + hide menu on mobile */
-    @media (max-width: 768px) {
-      .hamburger { display: flex; }
-      .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #fff;
-        flex-direction: column;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease, padding 0.4s ease;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    @media (max-width:768px){
+      .hamburger{display:flex;}
+      .top-contact{white-space:normal;font-size:13px;text-align:center;width:100%;order:3;margin-top:8px;}
+      .header-inner{
+        padding:0 24px;           /* increased left/right padding */
       }
-      .nav-menu.active {
-        max-height: 500px;
-        padding: 20px 0;
+      .nav-menu{
+        position:fixed;
+        top:0;left:0;
+        width:100vw;
+        height:100vh;
+        background:#fff;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:40px;
+        transform:translateY(-100%);
+        transition:transform .4s ease;
+        z-index:1050;
+        padding:0 20px;
       }
-      .nav-menu a {
-        padding: 14px 20px;
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid #eee;
+      .nav-menu.active{transform:translateY(0);}
+      .nav-menu a{font-size:24px;font-weight:600;}
+      .contact-btn{padding:16px 50px;font-size:18px;}
+    }
+
+    @media (max-width:340px){
+      .header-inner{
+        padding:0 28px;           /* even more breathing room at 320px */
       }
-      .nav-menu a:last-child { border-bottom: none; }
-      .contact-btn {
-        margin: 15px 20px 5px;
-        width: calc(100% - 40px);
-      }
+    }
+
+    .hero{
+      position:relative;
+      max-width:1440px;
+      margin:0 auto;
+      padding:80px 20px 180px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:40px;
+      flex-wrap:wrap;
+    }
+    .hero-text{max-width:650px;}
+    .hero-text .tag{color:var(--blue);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+    .hero-text h1{font-size:38px;margin:15px 0 20px;line-height:1.2;}
+    .hero-text p{font-size:16px;margin-bottom:20px;}
+    .btn-primary{background:var(--gold);color:#000;padding:14px 34px;border-radius:4px;font-weight:500;display:inline-block;}
+    .hero-img{flex:1;min-width:300px;}
+
+    .testimonial-slider{
+      position:absolute;
+      bottom:-100px;
+      left:50%;
+      transform:translateX(-50%);
+      background:#fff;
+      padding:35px;
+      width:90%;
+      max-width:460px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.15);
+      border-radius:12px;
+      text-align:center;
+      z-index:10;
+    }
+    .slides{display:none;opacity:0;transition:opacity .8s ease;}
+    .slides.active{display:block;opacity:1;}
+    .slides p{font-style:italic;margin-bottom:15px;font-size:15.5px;}
+    .slides strong{color:var(--blue);font-weight:600;}
+    .dots{margin-top:20px;text-align:center;}
+    .dot{height:10px;width:10px;margin:0 6px;background:#ddd;border-radius:50%;display:inline-block;cursor:pointer;transition:background .3s;}
+    .dot.active,.dot:hover{background:var(--green);}
+
+    .video-wrapper{
+      max-width:600px;
+      margin:100px auto 0;
+      text-align:center;
+    }
+    .video-wrapper video{
+      width:100%;
+      border-radius:12px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .mission-values{padding:160px 20px 100px;background:#f9f9f9;text-align:center;}
+    .mission-values h2{font-size:36px;margin-bottom:20px;color:var(--blue);}
+    .mission-statement{max-width:900px;margin:0 auto 60px;font-size:18px;line-height:1.8;color:#333;}
+    .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;max-width:1200px;margin:0 auto;}
+    .value-card{background:#fff;padding:35px 25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,0.08);transition:transform .3s;}
+    .value-card:hover{transform:translateY(-8px);}
+    .value-card h3{color:var(--blue);margin-bottom:15px;font-size:22px;}
+
+    .about{padding:100px 20px;max-width:1440px;margin:0 auto;text-align:center;background:#fff;}
+    .about h2{font-size:36px;margin-bottom:30px;color:var(--blue);}
+    .about p{max-width:900px;margin:0 auto 20px;font-size:16.5px;line-height:1.8;}
+
+    .services{padding:100px 20px;max-width:1440px;margin:0 auto;text-align:center;}
+    .services h2{font-size:44px;margin-bottom:20px;color:var(--blue);}
+    .services>p{font-size:20px;margin-bottom:60px;color:#555;}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px;}
+    .service-card{background:#f9f9f9;padding:40px 25px;border-radius:12px;text-align:center;transition:transform .3s;}
+    .service-card:hover{transform:translateY(-10px);}
+    .service-card img{width:100%;height:200px;object-fit:contain;object-position:center;border-radius:8px;background:#f8f9fa;margin-bottom:20px;padding:10px;}
+    .service-card h3{font-size:24px;margin:15px 0;color:var(--blue);}
+    .service-card p{font-size:14.5px;margin-bottom:20px;color:#444;}
+    .service-card a{color:var(--green);font-weight:700;font-size:14px;}
+
+    .stats{background:var(--gold);color:#000;padding:100px 20px;text-align:center;overflow:hidden;}
+    .stats-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;max-width:1200px;margin:0 auto;}
+    .stat-item{display:flex;flex-direction:column;align-items:center;}
+    .stat-number{font-size:68px;font-weight:900;line-height:1;margin-bottom:12px;}
+    .stat-number span{font-size:82px;}
+    .stat-label{font-size:18px;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
+
+    footer{background:#e2e6f2;padding:100px 20px 40px;color:var(--dark);}
+    .footer-inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:50px;}
+    .footer-logo{width:130px;margin-bottom:20px;}
+    .footer-contact h4{font-size:18px;margin-bottom:25px;color:var(--blue);}
+    .footer-contact p{font-size:14px;margin:8px 0;}
+    .privacy-link{color:var(--blue);text-decoration:underline;}
+    .copyright{margin-top:50px;text-align:center;font-size:14px;color:#555;}
+
+    @media(max-width:1200px){.hero{padding:70px 20px 160px;}.hero-text h1{font-size:34px;}.services h2{font-size:38px;}}
+    @media(max-width:992px){.hero{padding:60px 20px 140px;flex-direction:column;text-align:center;}.hero-text{max-width:100%;}.hero-text h1{font-size:32px;}.hero-img{margin-top:30px;}}
+    @media(max-width:768px){
+      .hero{padding:50px 20px 120px;}
+      .testimonial-slider{position:static;transform:none;margin:60px auto 40px;width:95%;padding:25px 20px;}
+      .video-wrapper{margin:80px auto 0;}
+    }
+    @media(max-width:480px){
+      .hero{padding:40px 15px 100px;}
+      .hero-text h1{font-size:24px;}
+      .testimonial-slider{padding:20px 15px;width:98%;}
+    }
+    @media(min-width:1600px){
+      .header-inner,.hero,.about,.services,.footer-inner{max-width:1600px;}
+      .hero-text h1{font-size:44px;}
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="header-inner">
       <a href="#" class="logo">
         <img src="triptastic1.png" alt="Trip Tastic Nursing & Employment Agency">
       </a>
-
       <div class="top-contact">
-        <span>Phone: +246-846-7648 </span> • <span>triptasticemployment@outlook.com</span>  
+        <span>Phone: +246-846-7648 </span> • <span>triptasticemployment@outlook.com</span>
       </div>
 
-      <!-- HAMBURGER BUTTON (NEW) -->
-      <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <nav class="nav-menu">
+      <nav class="nav-menu" id="navMenu">
         <a href="#">Home</a>
         <a href="#services">Services</a>
         <a href="#about">About Us</a>
@@ -231,14 +242,14 @@
         <a href="#">Health Tips</a>
         <a href="#" class="contact-btn">Contact Us Now</a>
       </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- ALL YOUR EXISTING CONTENT (unchanged) -->
-  <!-- HERO + TESTIMONIAL SLIDER + VIDEO -->
   <section class="hero">
-    <!-- ... your full hero content exactly as before ... -->
-    <!-- (kept 100% identical – not repeated here for brevity) -->
     <div class="hero-text">
       <p class="tag">Trusted Since 2022</p>
       <h1>Trip Tastic Nursing & Employment Agency – Your Partner in Care & Opportunity</h1>
@@ -250,17 +261,15 @@
       <img src="triptastic7.avif" alt="Compassionate caregiver with patient">
     </div>
 
-    <!-- TESTIMONIAL SLIDER (unchanged) -->
     <div class="testimonial-slider">
-      <!-- all your slides unchanged -->
-      <div class="slides active"><p>“Trip Tastic has been a blessing to our family. They’ve made a real difference in my aunt’s quality of life and given me peace of mind knowing she’s in good hands. I’m so grateful for their dedication.”</p><strong>— Juliet Fenty (niece of client Joyce Fenty)</strong></div>
-      <div class="slides"><p>“Working with Trip Tastic has been one of the best experiences of my career. The team is organized, caring, and always goes the extra mile. I’m proud to be part of the Trip Tastic team.”</p><strong>— Anniesha Watson, Nursing Assistant</strong></div>
-      <div class="slides"><p>“Joining Trip Tastic has truly been a blessing. The team is friendly, supportive, and always professional. It feels like being part of a family that encourages you to do your best every day.”</p><strong>— Diamond Prendergast, Caregiver</strong></div>
-      <div class="slides"><p>“I’ve had the pleasure of working with Trip Tastic for the past year. The staff are always punctual, respectful, and well-trained. Trip Tastic has exceeded my expectations in every way.”</p><strong>— George Sealy, Client</strong></div>
-      <div class="slides"><p>“From our very first conversation, the team was kind, understanding, and completely professional. The care and compassion shown to my aunt have been truly exceptional.”</p><strong>— Juliet & Joyce Fenty</strong></div>
-
-      <a class="prev" onclick="plusSlides(-1)">Previous</a>
-      <a class="next" onclick="plusSlides(1)">Next</a>
+      <div class="slides active">
+        <p>“Trip Tastic has been a blessing to our family. They’ve made a real difference in my aunt’s quality of life...”</p>
+        <strong>— Juliet Fenty</strong>
+      </div>
+      <div class="slides"><p>“Working with Trip Tastic has been one of the best experiences of my career...”</p><strong>— Anniesha Watson</strong></div>
+      <div class="slides"><p>“Joining Trip Tastic has truly been a blessing...”</p><strong>— Diamond Prendergast</strong></div>
+      <div class="slides"><p>“I’ve had the pleasure of working with Trip Tastic for the past year...”</p><strong>— George Sealy</strong></div>
+      <div class="slides"><p>“From our very first conversation, the team was kind...”</p><strong>— Juliet & Joyce Fenty</strong></div>
 
       <div class="dots">
         <span class="dot active" onclick="currentSlide(1)"></span>
@@ -271,44 +280,110 @@
       </div>
     </div>
 
-    <div style="max-width: 600px; margin: 80px auto 0; margin-bottom: 80px; text-align: center;">
-      <video width="100%" style="border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);" controls autoplay muted loop playsinline>
+    <div class="video-wrapper">
+      <video controls autoplay muted loop playsinline>
         <source src="triptastic.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
   </section>
 
-  <!-- Rest of your sections (Mission, About, Services, Stats, Footer) remain 100% unchanged -->
-  <!-- ... (all your existing sections here – exactly as you had them) ... -->
+  <section class="mission-values">
+    <h2>Our Mission & Core Values</h2>
+    <div class="mission-statement">
+      At Trip Tastic Nursing and Employment Agency, our mission is to provide exceptional staffing and healthcare solutions that promote quality care, professional growth, and community well-being...
+    </div>
+    <div class="values-grid">
+      <div class="value-card"><h3>1. Compassion</h3><p>We believe in caring for people with empathy and respect...</p></div>
+      <div class="value-card"><h3>2. Integrity</h3><p>We uphold honesty, transparency...</p></div>
+      <div class="value-card"><h3>3. Excellence</h3><p>We strive for the highest standards...</p></div>
+      <div class="value-card"><h3>4. Reliability</h3><p>We are committed to consistency...</p></div>
+      <div class="value-card"><h3>5. Empowerment</h3><p>We support growth and development...</p></div>
+      <div class="value-card"><h3>6. Teamwork</h3><p>We value collaboration...</p></div>
+    </div>
+  </section>
 
-  <!-- YOUR ORIGINAL TESTIMONIAL SLIDER SCRIPT + NEW HAMBURGER SCRIPT -->
+  <section class="about" id="about">
+    <h2>About Trip Tastic Nursing & Employment Agency</h2>
+    <p>Trip Tastic Nursing and Employment Agency is a reputable staffing and healthcare service provider committed to excellence...</p>
+    <p>Since its founding, Trip Tastic has expanded its services beyond healthcare...</p>
+    <p>Driven by a passion for quality service and community well-being...</p>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <p style="font-size:20px;margin-bottom:60px;">Comprehensive Healthcare Staffing & Employment Solutions</p>
+    <div class="services-grid">
+      <div class="service-card"><img src="triptastic1.jpg" alt="Nursing Staffing"><h3>Nursing & Healthcare Staffing</h3><p>Registered Nurses • Licensed Practical Nurses • Nursing Assistants • Home Health Aides</p><a href="#">Learn more</a></div>
+      <div class="service-card"><img src="triptastic2.jpeg" alt="Private Home Care"><h3>Private In-Home Care</h3><p>Compassionate personal care, companionship...</p><a href="#">Learn more</a></div>
+      <div class="service-card"><img src="employment.jpeg" alt="General Employment"><h3>General Employment Services</h3><p>Administrative, hospitality...</p><a href="#">Learn more</a></div>
+      <div class="service-card"><img src="triptastic4.jpg" alt="Training"><h3>Training & Professional Development</h3><p>Workshops and certifications...</p><a href="#">Learn more</a></div>
+      <div class="service-card"><img src="recruitment.jpeg" alt="Recruitment"><h3>Recruitment & Placement</h3><p>Temporary, part-time...</p><a href="#">Learn more</a></div>
+      <div class="service-card"><img src="healthcommunity.jpeg" alt="Health Education"><h3>Health Education & Community Support</h3><p>Free health tips...</p><a href="#">Learn more</a></div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stats-container">
+      <div class="stat-item"><div class="stat-number">100<span>%</span></div><div class="stat-label">Client Satisfaction Focus</div></div>
+      <div class="stat-item"><div class="stat-number">3<span>+</span></div><div class="stat-label">Years of Excellence</div></div>
+      <div class="stat-item"><div class="stat-number">500<span>+</span></div><div class="stat-label">Successful Placements</div></div>
+      <div class="stat-item"><div class="stat-number">Growing</div><div class="stat-label">Dedicated Professionals</div></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <img src="triptastic1.png" alt="Trip Tastic Logo" class="footer-logo">
+        <p>Trip Tastic Nursing and Employment Agency – Connecting compassionate professionals with meaningful opportunities since 2022...</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Get In Touch</h4>
+        <p>Phone: +246-825-5384</p>
+        <p>Tel: +246-846-7648</p>
+        <p>Email: info@triptasticbarbados.com</p>
+        <p>St George, Barbados</p>
+        <p><a href="#" class="privacy-link">Privacy Policy</a></p>
+      </div>
+      <div>
+        <p>Our mission is to provide exceptional staffing and healthcare solutions...</p>
+      </div>
+    </div>
+    <div class="copyright">
+      Copyright 2025 Trip Tastic Nursing & Employment Agency. All rights reserved.
+    </div>
+  </footer>
+
   <script>
-    // Existing testimonial slider (unchanged)
-    let slideIndex = 1;
+    let slideIndex=1;
     showSlides(slideIndex);
-    function plusSlides(n) { showSlides(slideIndex += n); }
-    function currentSlide(n) { showSlides(slideIndex = n); }
-    function showSlides(n) {
-      let i;
-      const slides = document.getElementsByClassName("slides");
-      const dots = document.getElementsByClassName("dot");
-      if (n > slides.length) slideIndex = 1;
-      if (n < 1) slideIndex = slides.length;
-      for (i = 0; i < slides.length; i++) slides[i].classList.remove("active");
-      for (i = 0; i < dots.length; i++) dots[i].classList.remove("active");
-      slides[slideIndex - 1].classList.add("active");
-      dots[slideIndex - 1].classList.add("active");
+    function plusSlides(n){showSlides(slideIndex+=n);}
+    function currentSlide(n){showSlides(slideIndex=n);}
+    function showSlides(n){
+      const slides=document.getElementsByClassName("slides");
+      const dots=document.getElementsByClassName("dot");
+      if(n>slides.length)slideIndex=1;
+      if(n<1)slideIndex=slides.length;
+      for(let i=0;i<slides.length;i++)slides[i].classList.remove("active");
+      for(let i=0;i<dots.length;i++)dots[i].classList.remove("active");
+      slides[slideIndex-1].classList.add("active");
+      dots[slideIndex-1].classList.add("active");
     }
-    setInterval(() => plusSlides(1), 8000);
+    setInterval(()=>{plusSlides(1)},8000);
 
-    // NEW: Hamburger menu toggle
-    function toggleMenu() {
-      const menu = document.querySelector('.nav-menu');
-      const hamburger = document.querySelector('.hamburger');
-      menu.classList.toggle('active');
+    const hamburger=document.getElementById('hamburger');
+    const navMenu=document.getElementById('navMenu');
+    hamburger.addEventListener('click',()=>{
       hamburger.classList.toggle('active');
-    }
+      navMenu.classList.toggle('active');
+    });
+    document.querySelectorAll('#navMenu a').forEach(link=>{
+      link.addEventListener('click',()=>{
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
   </script>
 </body>
 </html>
