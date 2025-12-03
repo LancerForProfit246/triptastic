@@ -39,7 +39,7 @@
       .hamburger{display:flex;}
       .top-contact{white-space:normal;font-size:13px;text-align:center;width:100%;order:3;margin-top:8px;}
       .header-inner{padding:0 24px;}
-      .nav-menu{position:fixed;top:0;left:0;width:100vw;height:100vh;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px;transform:translateY(-100%);transition:transform .4s ease;z-index:1050;padding:0 20px;}
+      .nav-menu{position:fixed;top:0;left:0;width:100vw;height:100vh;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px;transform:translateY(-100%);transition:transform .4s ease;z-index:1050;}
       .nav-menu.active{transform:translateY(0);}
       .nav-menu a{font-size:24px;font-weight:600;}
       .contact-btn{padding:16px 50px;font-size:18px;}
@@ -98,19 +98,19 @@
     summary span{font-size:28px;color:var(--green);margin-left:20px;transition:color .3s;}
     details[open] summary span{content:'−';color:#e74c3c;}
     details > div{padding:0 30px 30px 30px;font-size:16px;line-height:1.8;color:#333;}
-    .disclaimer-box{margin-top:60px;padding:30px;background:#fff;border-radius:12px;max-width:1000px;margin-left:auto;margin-right:auto;box-shadow:0 8px 25px rgba(0,0,0,0.08);}
+    .disclaimer-box{margin-top:60px;padding:30px;background:#fff;border-radius:12px;max-width:1000px;margin:60px auto 0;box-shadow:0 8px 25px rgba(0,0,0,0.08);}
     .disclaimer-box p{font-size:16px;color:#555;line-height:1.8;}
 
-    .forms-cta{padding:120px 20px;background:linear-gradient(135deg, #0a1c81 0%, #001f4d 100%);color:#fff;text-align:center;}
-    .forms-cta h2{font-size:44px;margin-bottom:20px;color:#fff;}
-    .forms-cta p{font-size:20px;max-width:800px;margin:0 auto 50px;opacity:0.95;line-height:1.7;}
-    .forms-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:40px;max-width:1000px;margin:0 auto;}
-    .form-card{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);border-radius:16px;padding:40px 30px;transition:transform .4s, background .4s;}
-    .form-card:hover{transform:translateY(-12px);background:rgba(255,255,255,0.18);}
-    .form-card h3{font-size:28px;margin-bottom:15px;color:var(--gold);}
-    .form-card p{font-size:16px;margin-bottom:30px;opacity:0.9;}
-    .btn-form{display:inline-block;background:var(--gold);color:#000;font-weight:700;font-size:18px;padding:16px 40px;border-radius:8px;transition:all .3s;box-shadow:0 8px 20px rgba(0,0,0,0.3);}
-    .btn-form:hover{background:#fff;transform:translateY(-3px);box-shadow:0 12px 25px rgba(0,0,0,0.4);}
+    .forms-cta{width:100vw;position:relative;margin-left:50%;transform:translateX(-50%);padding:140px 20px;background:linear-gradient(135deg,#0a1c81 0%,#001f4d 100%);color:#fff;text-align:center;}
+    .forms-cta h2{font-size:48px;margin-bottom:20px;color:#fff;}
+    .forms-cta > p{font-size:21px;max-width:900px;margin:0 auto 70px;opacity:0.95;line-height:1.7;}
+    .forms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:50px;max-width:1200px;margin:0 auto;}
+    .form-card{background:rgba(255,255,255,0.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.2);border-radius:16px;padding:50px 40px;transition:all .4s;}
+    .form-card:hover{transform:translateY(-15px);background:rgba(255,255,255,0.2);}
+    .form-card h3{font-size:32px;margin-bottom:16px;color:var(--gold);}
+    .form-card p{font-size:17.5px;margin-bottom:38px;opacity:0.92;}
+    .btn-form{display:inline-block;background:var(--gold);color:#000;font-weight:700;font-size:19px;padding:18px 48px;border-radius:8px;transition:all .3s;box-shadow:0 10px 30px rgba(0,0,0,0.4);}
+    .btn-form:hover{background:#fff;transform:translateY(-4px);box-shadow:0 15px 35px rgba(0,0,0,0.5);}
 
     .stats{background:var(--gold);color:#000;padding:100px 20px;text-align:center;overflow:hidden;}
     .stats-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;max-width:1200px;margin:0 auto;}
@@ -134,16 +134,18 @@
       .testimonial-slider{position:static;transform:none;margin:60px auto 40px;width:95%;padding:25px 20px;}
       .video-wrapper{margin:80px auto 0;}
       .health-tips h2,.forms-cta h2{font-size:36px;}
-      .forms-cta p{font-size:18px;}
-      .form-card{padding:35px 25px;}
+      .forms-cta > p{font-size:18px;}
+      .form-card{padding:40px 30px;}
+      .forms-grid{gap:40px;}
     }
     @media(max-width:480px){
       .hero{padding:40px 15px 100px;}
       .hero-text h1{font-size:24px;}
       .testimonial-slider{padding:20px 15px;width:98%;}
+      .forms-cta h2{font-size:32px;}
     }
     @media(min-width:1600px){
-      .header-inner,.hero,.about,.services,.health-tips > div,.forms-cta,.footer-inner{max-width:1600px;}
+      .header-inner,.hero,.about,.services,.health-tips > div,.forms-grid,.footer-inner{max-width:1600px;margin:0 auto;}
       .hero-text h1{font-size:44px;}
     }
   </style>
@@ -158,7 +160,6 @@
       <div class="top-contact">
         <span>Phone: +246-846-7648 </span> • <span>triptasticemployment@outlook.com</span>
       </div>
-
       <nav class="nav-menu" id="navMenu">
         <a href="#">Home</a>
         <a href="#services">Services</a>
@@ -167,7 +168,6 @@
         <a href="#health-tips">Health Tips</a>
         <a href="#" class="contact-btn">Contact Us Now</a>
       </nav>
-
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -195,7 +195,6 @@
       <div class="slides"><p>“Joining Trip Tastic has truly been a blessing...”</p><strong>— Diamond Prendergast</strong></div>
       <div class="slides"><p>“I’ve had the pleasure of working with Trip Tastic for the past year...”</p><strong>— George Sealy</strong></div>
       <div class="slides"><p>“From our very first conversation, the team was kind...”</p><strong>— Juliet & Joyce Fenty</strong></div>
-
       <div class="dots">
         <span class="dot active" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
@@ -256,35 +255,68 @@
       <div class="accordion">
         <details class="accordion-item">
           <summary>1. What is Hypertension (High Blood Pressure)? <span>+</span></summary>
-          <div><p><strong>Answer:</strong> Hypertension occurs when the force of blood against your artery walls is consistently too high. It often has no symptoms, but over time it can lead to serious problems like heart disease or stroke.</p><p><strong>Tips:</strong></p><ul><li>Monitor your blood pressure regularly.</li><li>Eat a balanced diet low in salt and saturated fats.</li><li>Exercise regularly and manage stress.</li><li>Take medications as prescribed.</li></ul></div>
+          <div>
+            <p><strong>Answer:</strong> Hypertension occurs when the force of blood against your artery walls is consistently too high. It often has no symptoms, but over time it can lead to serious problems like heart disease or stroke.</p>
+            <p><strong>Tips:</strong></p>
+            <ul><li>Monitor your blood pressure regularly.</li><li>Eat a balanced diet low in salt and saturated fats.</li><li>Exercise regularly and manage stress.</li><li>Take medications as prescribed.</li></ul>
+          </div>
         </details>
         <details class="accordion-item">
           <summary>2. What is Diabetes? <span>+</span></summary>
-          <div><p><strong>Answer:</strong> Diabetes is a condition where the body cannot properly use or produce insulin, leading to high blood sugar levels. There are two main types: Type 1 (requires insulin) and Type 2 (often linked to lifestyle factors).</p><p><strong>Tips:</strong></p><ul><li>Eat a healthy, balanced diet.</li><li>Stay active and maintain a healthy weight.</li><li>Monitor blood sugar levels as recommended.</li><li>Follow your doctor’s treatment plan.</li></ul></div>
+          <div>
+            <p><strong>Answer:</strong> Diabetes is a condition where the body cannot properly use or produce insulin, leading to high blood sugar levels. There are two main types: Type 1 (requires insulin) and Type 2 (often linked to lifestyle factors).</p>
+            <p><strong>Tips:</strong></p>
+            <ul><li>Eat a healthy, balanced diet.</li><li>Stay active and maintain a healthy weight.</li><li>Monitor blood sugar levels as recommended.</li><li>Follow your doctor’s treatment plan.</li></ul>
+          </div>
         </details>
         <details class="accordion-item">
           <summary>3. What is Dementia? <span>+</span></summary>
-          <div><p><strong>Answer:</strong> Dementia is a group of conditions that cause memory loss, confusion, and difficulty with thinking or communication. Alzheimer’s disease is the most common type.</p><p><strong>Tips:</strong></p><ul><li>Provide a calm, structured environment.</li><li>Encourage mental stimulation (music, puzzles, conversation).</li><li>Maintain routines to reduce anxiety.</li><li>Offer kindness, patience, and reassurance.</li></ul></div>
+          <div>
+            <p><strong>Answer:</strong> Dementia is a group of conditions that cause memory loss, confusion, and difficulty with thinking or communication. Alzheimer’s disease is the most common type.</p>
+            <p><strong>Tips:</strong></p>
+            <ul><li>Provide a calm, structured environment.</li><li>Encourage mental stimulation (music, puzzles, conversation).</li><li>Maintain routines to reduce anxiety.</li><li>Offer kindness, patience, and reassurance.</li></ul>
+          </div>
         </details>
         <details class="accordion-item">
           <summary>4. What is Arthritis? <span>+</span></summary>
-          <div><p><strong>Answer:</strong> Arthritis causes inflammation and pain in the joints, which can make movement difficult. The two most common forms are osteoarthritis and rheumatoid arthritis.</p><p><strong>Tips:</strong></p><ul><li>Engage in gentle exercise like walking or swimming.</li><li>Maintain a healthy weight.</li><li>Use warm compresses or prescribed medication to relieve pain.</li><li>Avoid overexertion of painful joints.</li></ul></div>
+          <div>
+            <p><strong>Answer:</strong> Arthritis causes inflammation and pain in the joints, which can make movement difficult. The two most common forms are osteoarthritis and rheumatoid arthritis.</p>
+            <p><strong>Tips:</strong></p>
+            <ul><li>Engage in gentle exercise like walking or swimming.</li><li>Maintain a healthy weight.</li><li>Use warm compresses or prescribed medication to relieve pain.</li><li>Avoid overexertion of painful joints.</li></ul>
+          </div>
         </details>
         <details class="accordion-item">
           <summary>5. What is Asthma? <span>+</span></summary>
-          <div><p><strong>Answer:</strong> Asthma is a chronic lung condition that causes difficulty breathing due to inflamed or narrowed airways. Symptoms include coughing, wheezing, and shortness of breath.</p><p><strong>Tips:</strong></p><ul><li>Identify and avoid triggers (dust, smoke, pollen, etc.).</li><li>Use inhalers or prescribed medication correctly.</li><li>Keep your environment clean and well-ventilated.</li><li>Seek immediate help during severe attacks.</li></ul></div>
+          <div>
+            <p><strong>Answer:</strong> Asthma is a chronic lung condition that causes difficulty breathing due to inflamed or narrowed airways. Symptoms include coughing, wheezing, and shortness of breath.</p>
+            <p><strong>Tips:</strong></p>
+            <ul><li>Identify and avoid triggers (dust, smoke, pollen, etc.).</li><li>Use inhalers or prescribed medication correctly.</li><li>Keep your environment clean and well-ventilated.</li><li>Seek immediate help during severe attacks.</li></ul>
+          </div>
         </details>
         <details class="accordion-item">
           <summary>6. What is Depression? <span>+</span></summary>
-          <div><p><strong>Answer:</strong> Depression is a mental health disorder that affects mood, energy, and overall well-being. It’s more than just feeling sad — it can interfere with daily life and relationships.</p><p><strong>Tips:</strong></p><ul><li>Talk to someone you trust about how you feel.</li><li>Maintain a routine and stay active.</li><li>Eat well and get enough sleep.</li><li>Seek professional help when needed — treatment works.</li></ul></div>
+          <div>
+            <p><strong>Answer:</strong> Depression is a mental health disorder that affects mood, energy, and overall well-being. It’s more than just feeling sad — it can interfere with daily life and relationships.</p>
+            <p><strong>Tips:</strong></p>
+            <ul><li>Talk to someone you trust about how you feel.</li><li>Maintain a routine and stay active.</li><li>Eat well and get enough sleep.</li><li>Seek professional help when needed — treatment works.</li></ul>
+          </div>
         </details>
         <details class="accordion-item">
           <summary>7. What is a Stroke? <span>+</span></summary>
-          <div><p><strong>Answer:</strong> A stroke happens when blood flow to part of the brain is blocked or reduced, depriving brain cells of oxygen. Immediate medical attention is critical.</p><p><strong>Warning Signs (Think FAST):</strong> Face drooping • Arm weakness • Speech difficulty • Time to call emergency services</p><p><strong>Tips:</strong></p><ul><li>Manage blood pressure and cholesterol.</li><li>Eat a heart-healthy diet.</li><li>Exercise regularly and avoid smoking.</li></ul></div>
+          <div>
+            <p><strong>Answer:</strong> A stroke happens when blood flow to part of the brain is blocked or reduced, depriving brain cells of oxygen. Immediate medical attention is critical.</p>
+            <p><strong>Warning Signs (Think FAST):</strong> Face drooping • Arm weakness • Speech difficulty • Time to call emergency services</p>
+            <p><strong>Tips:</strong></p>
+            <ul><li>Manage blood pressure and cholesterol.</li><li>Eat a heart-healthy diet.</li><li>Exercise regularly and avoid smoking.</li></ul>
+          </div>
         </details>
         <details class="accordion-item">
           <summary>8. What is the Flu (Influenza)? <span>+</span></summary>
-          <div><p><strong>Answer:</strong> The flu is a contagious respiratory illness caused by viruses. It can cause fever, chills, cough, sore throat, and fatigue.</p><p><strong>Tips:</strong></p><ul><li>Get vaccinated annually.</li><li>Wash hands frequently.</li><li>Cover your mouth and nose when coughing or sneezing.</li><li>Rest and stay hydrated if infected.</li></ul></div>
+          <div>
+            <p><strong>Answer:</strong> The flu is a contagious respiratory illness caused by viruses. It can cause fever, chills, cough, sore throat, and fatigue.</p>
+            <p><strong>Tips:</strong></p>
+            <ul><li>Get vaccinated annually.</li><li>Wash hands frequently.</li><li>Cover your mouth and nose when coughing or sneezing.</li><li>Rest and stay hydrated if infected.</li></ul>
+          </div>
         </details>
       </div>
 
@@ -368,27 +400,14 @@
 
     const hamburger=document.getElementById('hamburger');
     const navMenu=document.getElementById('navMenu');
-    hamburger.addEventListener('click',()=>{
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
-    });
-    document.querySelectorAll('#navMenu a').forEach(link=>{
-      link.addEventListener('click',()=>{
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-      });
-    });
+    hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');navMenu.classList.toggle('active');});
+    document.querySelectorAll('#navMenu a').forEach(link=>{link.addEventListener('click',()=>{hamburger.classList.remove('active');navMenu.classList.remove('active');});});
 
     document.querySelectorAll('.accordion-item').forEach(item => {
       item.addEventListener('toggle', () => {
         const span = item.querySelector('summary span');
-        if (item.open) {
-          span.textContent = '−';
-          span.style.color = '#e74c3c';
-        } else {
-          span.textContent = '+';
-          span.style.color = 'var(--green)';
-        }
+        span.textContent = item.open ? '−' : '+';
+        span.style.color = item.open ? '#e74c3c' : 'var(--green)';
       });
     });
   </script>
