@@ -86,47 +86,19 @@
     @media (max-width:768px){
       .hamburger{display:flex;}
       .top-contact{white-space:normal;font-size:13px;text-align:center;width:100%;order:3;margin-top:8px;}
-      .header-inner{
-        padding:0 24px;           /* increased left/right padding */
-      }
+      .header-inner{padding:0 24px;}
       .nav-menu{
-        position:fixed;
-        top:0;left:0;
-        width:100vw;
-        height:100vh;
-        background:#fff;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
-        gap:40px;
-        transform:translateY(-100%);
-        transition:transform .4s ease;
-        z-index:1050;
-        padding:0 20px;
+        position:fixed;top:0;left:0;width:100vw;height:100vh;background:#fff;
+        display:flex;flex-direction:column;align-items:center;justify-content:center;
+        gap:40px;transform:translateY(-100%);transition:transform .4s ease;z-index:1050;padding:0 20px;
       }
       .nav-menu.active{transform:translateY(0);}
       .nav-menu a{font-size:24px;font-weight:600;}
       .contact-btn{padding:16px 50px;font-size:18px;}
     }
+    @media (max-width:340px){.header-inner{padding:0 28px;}}
 
-    @media (max-width:340px){
-      .header-inner{
-        padding:0 28px;           /* even more breathing room at 320px */
-      }
-    }
-
-    .hero{
-      position:relative;
-      max-width:1440px;
-      margin:0 auto;
-      padding:80px 20px 180px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:40px;
-      flex-wrap:wrap;
-    }
+    .hero{position:relative;max-width:1440px;margin:0 auto;padding:80px 20px 180px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
     .hero-text{max-width:650px;}
     .hero-text .tag{color:var(--blue);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
     .hero-text h1{font-size:38px;margin:15px 0 20px;line-height:1.2;}
@@ -135,18 +107,9 @@
     .hero-img{flex:1;min-width:300px;}
 
     .testimonial-slider{
-      position:absolute;
-      bottom:-100px;
-      left:50%;
-      transform:translateX(-50%);
-      background:#fff;
-      padding:35px;
-      width:90%;
-      max-width:460px;
-      box-shadow:0 15px 40px rgba(0,0,0,0.15);
-      border-radius:12px;
-      text-align:center;
-      z-index:10;
+      position:absolute;bottom:-100px;left:50%;transform:translateX(-50%);
+      background:#fff;padding:35px;width:90%;max-width:460px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.15);border-radius:12px;text-align:center;z-index:10;
     }
     .slides{display:none;opacity:0;transition:opacity .8s ease;}
     .slides.active{display:block;opacity:1;}
@@ -156,16 +119,8 @@
     .dot{height:10px;width:10px;margin:0 6px;background:#ddd;border-radius:50%;display:inline-block;cursor:pointer;transition:background .3s;}
     .dot.active,.dot:hover{background:var(--green);}
 
-    .video-wrapper{
-      max-width:600px;
-      margin:100px auto 0;
-      text-align:center;
-    }
-    .video-wrapper video{
-      width:100%;
-      border-radius:12px;
-      box-shadow:0 15px 40px rgba(0,0,0,0.15);
-    }
+    .video-wrapper{max-width:600px;margin:100px auto 0;text-align:center;}
+    .video-wrapper video{width:100%;border-radius:12px;box-shadow:0 15px 40px rgba(0,0,0,0.15);}
 
     .mission-values{padding:160px 20px 100px;background:#f9f9f9;text-align:center;}
     .mission-values h2{font-size:36px;margin-bottom:20px;color:var(--blue);}
@@ -190,6 +145,19 @@
     .service-card p{font-size:14.5px;margin-bottom:20px;color:#444;}
     .service-card a{color:var(--green);font-weight:700;font-size:14px;}
 
+    /* NEW: Health Tips Section */
+    .health-tips{padding:120px 20px;background:#f9f9f9;text-align:center;}
+    .health-tips h2{font-size:42px;margin-bottom:20px;color:var(--blue);}
+    .health-tips > div > p{font-size:20px;max-width:900px;margin:0 auto 60px;color:#555;}
+    .accordion{max-width:1000px;margin:0 auto;text-align:left;}
+    details.accordion-item{margin-bottom:15px;background:#fff;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,0.08);overflow:hidden;}
+    summary{padding:25px 30px;font-size:20px;font-weight:600;color:var(--blue);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+    summary span{font-size:28px;color:var(--green);margin-left:20px;transition:color .3s;}
+    details[open] summary span{content:'−';color:#e74c3c;}
+    details > div{padding:0 30px 30px 30px;font-size:16px;line-height:1.8;color:#333;}
+    .disclaimer-box{margin-top:60px;padding:30px;background:#fff;border-radius:12px;max-width:1000px;margin-left:auto;margin-right:auto;box-shadow:0 8px 25px rgba(0,0,0,0.08);}
+    .disclaimer-box p{font-size:16px;color:#555;line-height:1.8;}
+
     .stats{background:var(--gold);color:#000;padding:100px 20px;text-align:center;overflow:hidden;}
     .stats-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;max-width:1200px;margin:0 auto;}
     .stat-item{display:flex;flex-direction:column;align-items:center;}
@@ -211,6 +179,7 @@
       .hero{padding:50px 20px 120px;}
       .testimonial-slider{position:static;transform:none;margin:60px auto 40px;width:95%;padding:25px 20px;}
       .video-wrapper{margin:80px auto 0;}
+      .health-tips h2{font-size:36px;}
     }
     @media(max-width:480px){
       .hero{padding:40px 15px 100px;}
@@ -218,7 +187,7 @@
       .testimonial-slider{padding:20px 15px;width:98%;}
     }
     @media(min-width:1600px){
-      .header-inner,.hero,.about,.services,.footer-inner{max-width:1600px;}
+      .header-inner,.hero,.about,.services,.health-tips > div,.footer-inner{max-width:1600px;}
       .hero-text h1{font-size:44px;}
     }
   </style>
@@ -239,7 +208,7 @@
         <a href="#services">Services</a>
         <a href="#about">About Us</a>
         <a href="#">Careers</a>
-        <a href="#">Health Tips</a>
+        <a href="#health-tips">Health Tips</a>
         <a href="#" class="contact-btn">Contact Us Now</a>
       </nav>
 
@@ -319,7 +288,145 @@
       <div class="service-card"><img src="employment.jpeg" alt="General Employment"><h3>General Employment Services</h3><p>Administrative, hospitality...</p><a href="#">Learn more</a></div>
       <div class="service-card"><img src="triptastic4.jpg" alt="Training"><h3>Training & Professional Development</h3><p>Workshops and certifications...</p><a href="#">Learn more</a></div>
       <div class="service-card"><img src="recruitment.jpeg" alt="Recruitment"><h3>Recruitment & Placement</h3><p>Temporary, part-time...</p><a href="#">Learn more</a></div>
-      <div class="service-card"><img src="healthcommunity.jpeg" alt="Health Education"><h3>Health Education & Community Support</h3><p>Free health tips...</p><a href="#">Learn more</a></div>
+      <div class="service-card"><img src="healthcommunity.jpeg" alt="Health Education"><h3>Health Education & Community Support</h3><p>Free health tips...</p><a href="#health-tips">View Health Tips →</a></div>
+    </div>
+  </section>
+
+  <!-- NEW HEALTH TIPS SECTION -->
+  <section class="health-tips" id="health-tips">
+    <div>
+      <h2>Health Tips & Common Questions</h2>
+      <p>
+        By Trip Tastic Nursing and Employment Agency<br>
+        At Trip Tastic, we believe knowledge is power—especially when it comes to your health. Here are answers to some of the most frequently asked questions about common conditions our nurses and caregivers encounter every day.
+      </p>
+
+      <div class="accordion">
+
+        <details class="accordion-item">
+          <summary>1. What is Hypertension (High Blood Pressure)? <span>+</span></summary>
+          <div>
+            <p><strong>Answer:</strong> Hypertension occurs when the force of blood against your artery walls is consistently too high. It often has no symptoms, but over time it can lead to serious problems like heart disease or stroke.</p>
+            <p><strong>Tips:</strong></p>
+            <ul>
+              <li>Monitor your blood pressure regularly.</li>
+              <li>Eat a balanced diet low in salt and saturated fats.</li>
+              <li>Exercise regularly and manage stress.</li>
+              <li>Take medications as prescribed.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary>2. What is Diabetes? <span>+</span></summary>
+          <div>
+            <p><strong>Answer:</strong> Diabetes is a condition where the body cannot properly use or produce insulin, leading to high blood sugar levels. There are two main types: Type 1 (requires insulin) and Type 2 (often linked to lifestyle factors).</p>
+            <p><strong>Tips:</strong></p>
+            <ul>
+              <li>Eat a healthy, balanced diet.</li>
+              <li>Stay active and maintain a healthy weight.</li>
+              <li>Monitor blood sugar levels as recommended.</li>
+              <li>Follow your doctor’s treatment plan.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary>3. What is Dementia Dementia? <span>+</span></summary>
+          <div>
+            <p><strong>Answer:</strong> Dementia is a group of conditions that cause memory loss, confusion, and difficulty with thinking or communication. Alzheimer’s disease is the most common type.</p>
+            <p><strong>Tips:</strong></p>
+            <ul>
+              <li>Provide a calm, structured environment.</li>
+              <li>Encourage mental stimulation (music, puzzles, conversation).</li>
+              <li>Maintain routines to reduce anxiety.</li>
+              <li>Offer kindness, patience, and reassurance.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary>4. What is Arthritis? <span>+</span></summary>
+          <div>
+            <p><strong>Answer:</strong> Arthritis causes inflammation and pain in the joints, which can make movement difficult. The two most common forms are osteoarthritis and rheumatoid arthritis.</p>
+            <p><strong>Tips:</strong></p>
+            <ul>
+              <li>Engage in gentle exercise like walking or swimming.</li>
+              <li>Maintain a healthy weight.</li>
+              <li>Use warm compresses or prescribed medication to relieve pain.</li>
+              <li>Avoid overexertion of painful joints.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary>5. What is Asthma? <span>+</span></summary>
+          <div>
+            <p><strong>Answer:</strong> Asthma is a chronic lung condition that causes difficulty breathing due to inflamed or narrowed airways. Symptoms include coughing, wheezing, and shortness of breath.</p>
+            <p><strong>Tips:</strong></p>
+            <ul>
+              <li>Identify and avoid triggers (dust, smoke, pollen, etc.).</li>
+              <li>Use inhalers or prescribed medication correctly.</li>
+              <li>Keep your environment clean and well-ventilated.</li>
+              <li>Seek immediate help during severe attacks.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary>6. What is Depression? <span>+</span></summary>
+          <div>
+            <p><strong>Answer:</strong> Depression is a mental health disorder that affects mood, energy, and overall well-being. It’s more than just feeling sad — it can interfere with daily life and relationships.</p>
+            <p><strong>Tips:</strong></p>
+            <ul>
+              <li>Talk to someone you trust about how you feel.</li>
+              <li>Maintain a routine and stay active.</li>
+              <li>Eat well and get enough sleep.</li>
+              <li>Seek professional help when needed — treatment works.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary>7. What is a Stroke? <span>+</span></summary>
+          <div>
+            <p><strong>Answer:</strong> A stroke happens when blood flow to part of the brain is blocked or reduced, depriving brain cells of oxygen. Immediate medical attention is critical.</p>
+            <p><strong>Warning Signs (Think FAST):</strong> Face drooping • Arm weakness • Speech difficulty • Time to call emergency services</p>
+            <p><strong>Tips:</strong></p>
+            <ul>
+              <li>Manage blood pressure and cholesterol.</li>
+              <li>Eat a heart-healthy diet.</li>
+              <li>Exercise regularly and avoid smoking.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary>8. What is the Flu (Influenza)? <span>+</span></summary>
+          <div>
+            <p><strong>Answer:</strong> The flu is a contagious respiratory illness caused by viruses. It can cause fever, chills, cough, sore throat, and fatigue.</p>
+            <p><strong>Tips:</strong></p>
+            <ul>
+              <li>Get vaccinated annually.</li>
+              <li>Wash hands frequently.</li>
+              <li>Cover your mouth and nose when coughing or sneezing.</li>
+              <li>Rest and stay hydrated if infected.</li>
+            </ul>
+          </div>
+        </details>
+
+      </div>
+
+      <div class="disclaimer-box">
+        <p>
+          <strong>Remember:</strong> These FAQs provide general information and are not a substitute for medical advice. Always consult a healthcare professional for personalized guidance and treatment.<br><br>
+          At <strong>Trip Tastic Nursing and Employment Agency</strong>, we are dedicated to promoting health awareness, providing compassionate care, and supporting our clients and staff in living healthier, happier lives.
+        </p>
+      </div>
+
+      <div style="margin-top:50px;">
+        <a href="#" class="btn-primary" style="padding:16px 40px;font-size:18px;">Contact Us for Professional Care</a>
+      </div>
     </div>
   </section>
 
@@ -356,6 +463,7 @@
   </footer>
 
   <script>
+    // Testimonial slider
     let slideIndex=1;
     showSlides(slideIndex);
     function plusSlides(n){showSlides(slideIndex+=n);}
@@ -372,6 +480,7 @@
     }
     setInterval(()=>{plusSlides(1)},8000);
 
+    // Mobile menu
     const hamburger=document.getElementById('hamburger');
     const navMenu=document.getElementById('navMenu');
     hamburger.addEventListener('click',()=>{
@@ -382,6 +491,20 @@
       link.addEventListener('click',()=>{
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+      });
+    });
+
+    // Accordion + / − toggle
+    document.querySelectorAll('.accordion-item').forEach(item => {
+      item.addEventListener('toggle', () => {
+        const span = item.querySelector('summary span');
+        if (item.open) {
+          span.textContent = '−';
+          span.style.color = '#e74c3c';
+        } else {
+          span.textContent = '+';
+          span.style.color = 'var(--green)';
+        }
       });
     });
   </script>
